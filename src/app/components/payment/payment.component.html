@@ -1,0 +1,21 @@
+<section class="mt-5 d-flex align-items-center justify-content-center">
+    <form [formGroup]="paymentForm" (ngSubmit)="handlePayment()"  class="rounded shadow w-50 mx-auto bg-main-light p-3 mt-5 ">
+        <div class="form-item">
+            <label for="details">details</label>
+            <input type="text" id="details" class="form-control" formControlName = 'details'>
+        </div>
+
+        <div class="form-item">
+            <label for="phone">phone</label>
+            <input type="tel" id="phone" class="form-control" formControlName = 'phone'>
+        </div>
+
+        <div class="form-item">
+            <label for="city">city</label>
+            <input type="text" id="city" class="form-control" formControlName = 'city'>
+        </div>
+
+        <button class="btn main-btn my-3">Check Out</button>
+
+    </form>
+</section>

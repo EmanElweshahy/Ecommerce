@@ -1,0 +1,12 @@
+<section class="container my-5 pt-5">
+    <div class="row g-4">
+        <div *ngFor="let category of categoriesData" class="col-md-4">
+            <div [routerLink]="['/Category',category._id]" class="product">
+                <img height="350" class="card-img-top" [src]="category.image" alt="Title">
+                <div class="card-body text-center">
+                    <h4 class="card-title text-main py-3 h1 fw-bold">{{category.name}}</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

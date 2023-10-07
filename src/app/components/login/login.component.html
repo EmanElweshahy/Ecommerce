@@ -1,0 +1,26 @@
+<section class="mt-5 d-flex align-items-center justify-content-center">
+    <form (ngSubmit)="handleLogin()" [formGroup]="loginForm" class="rounded shadow w-75 mx-auto bg-main-light p-3">
+
+        <div class="form-item">
+            <label for="Mail">Enter Your Mail</label>
+            <input class="form-control" formControlName="email" type="email" id="Mail">
+            <div *ngIf="loginForm.get('email')?.errors && ( loginForm.get('email')?.touched ||  loginForm.get('email')?.value.lenght>0)"
+                class="alert alert-danger">
+                <p *ngIf="loginForm.get('email')?.getError('required')">E-Mail Is Required</p>
+                <p *ngIf="loginForm.get('email')?.getError('email')">E-Mail minlenght 3</p>
+            </div>
+        </div>
+        <div class="form-item">
+            <label for="Password">Enter Your Password</label>
+            <input class="form-control" formControlName="password" type="password" id="Password">
+            <div *ngIf="loginForm.get('password')?.errors && ( loginForm.get('password')?.touched ||  loginForm.get('password')?.value.lenght>0)"
+                class="alert alert-danger">
+                <p *ngIf="loginForm.get('password')?.getError('required')">Password Is Required</p>
+                <p *ngIf="loginForm.get('password')?.getError('pattern')">must be at least 6 chars</p>
+            </div>
+        </div>
+        <button [disabled]="loginForm.invalid" class="main-btn d-block ms-auto my-4" type="submit">Login <span
+                *ngIf="isLoading"><i class="fas fa-spin fa-spinner"></i></span></button>
+        <p *ngIf="errorMsg" class="alert alert-danger">{{errorMsg}}</p>
+    </form>
+</section>

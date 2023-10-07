@@ -1,0 +1,30 @@
+
+<section class="container d-flex w-75 flex-column my-5 pt-3 rounded-4 bg-light gap-5">
+    <div class="d-flex justify-content-between">
+        <h3>Your Wish List</h3>
+    </div>
+    
+    <div>
+        <div  *ngFor="let item of wishListData" class="row align-items-center border-bottom mb-4" >
+            <div class="col-md-2">
+                <div>
+                    <img class="w-100" [src]="item.imageCover" [alt]="item.title" srcset="">
+                </div>
+            </div>
+            <div class="col-md-10">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h4>{{item.title}}</h4>
+                        <p class="mb-0">Price: {{item.price | currency:" EGP "}}</p>
+                        <button (click)="Remove(item._id)" class="btn p-0 m-0 text-danger"><i class="fa-solid fa-trash-can"></i> Remove</button>
+                    </div>
+                    <div>
+                        <button (click)="addProductToCart(item._id)"  class="btn main-btn border-success"> Add to Cart </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+</section>
