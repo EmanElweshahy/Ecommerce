@@ -26,7 +26,7 @@ const routes: Routes = [
       { path: 'Home', canActivate: [authGuard], component: HomeComponent, title: 'Home' },
       { path: 'Cart', canActivate: [authGuard], component: CartComponent, title: 'Cart' },
       { path: 'payment/:id', canActivate: [authGuard], component: PaymentComponent, title: 'payment' },
-      { path: 'allorders', canActivate: [authGuard], component: HomeComponent, title: 'Home' },
+      { path: 'allorders', canActivate: [authGuard], component: AllordersComponent, title: 'Done' },
       { path: 'WishList', canActivate: [authGuard], component:WishListComponent, title: 'WishList' },
       { path: 'Details/:id', canActivate:[authGuard], component:ProductDetailsComponent, title:'Details'},
       { path: 'Products', canActivate: [authGuard], component: ProductsComponent, title: 'Products' },
