@@ -1,6 +1,6 @@
-<section class="mt-2 d-flex align-items-center justify-content-center">
+<section class="d-flex align-items-center justify-content-center">
     <form (ngSubmit)="handleRegister()" [formGroup]="registerForm"
-        class="rounded shadow w-75 mx-auto bg-main-light p-3">
+        class="rounded shadow w-75 mx-auto bg-main-light px-3 pt-3">
         <div class="form-item">
             <label for="Name">Enter Your Name</label>
             <input class="form-control" formControlName="name" type="text" id="Name">
@@ -52,7 +52,7 @@
                 <p *ngIf="registerForm.get('phone')?.getError('pattern')">accept only egypt phone numbers</p>
             </div>
         </div>
-        <button [disabled]="registerForm.invalid" class="main-btn d-block ms-auto my-4" type="submit">Register <span *ngIf="isLoading"><i class="fas fa-spin fa-spinner"></i></span></button>
+        <button [disabled]="registerForm.invalid" class="main-btn d-block ms-auto my-2" type="submit">Register <span *ngIf="isLoading"><i class="fas fa-spin fa-spinner"></i></span></button>
         <p *ngIf="errorMsg" class="alert alert-danger">{{errorMsg}}</p>
     </form>
 </section>

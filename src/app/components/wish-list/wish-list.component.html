@@ -1,5 +1,5 @@
 
-<section class="container d-flex w-75 flex-column my-5 pt-3 rounded-4 bg-light gap-5">
+<section class="container d-flex w-75 flex-column my-5 pt-3 rounded-4 bg-light gap-5" *ngIf="wishListData;else msg">
     <div class="d-flex justify-content-between">
         <h3>Your Wish List</h3>
     </div>
@@ -28,3 +28,10 @@
     </div>
     
 </section>
+
+<ng-template #msg>
+    <section class="container d-flex w-75 flex-column my-5 pt-3 rounded-4 gap-5">
+        <h3 class="mt-5">Your Wish List</h3>
+        <h4>Your Wish List is Empty ...</h4>
+    </section>
+</ng-template>

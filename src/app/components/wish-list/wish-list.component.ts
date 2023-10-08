@@ -12,12 +12,13 @@ export class WishListComponent implements OnInit{
 
   constructor(private _ApiDataService:ApiDataService , private _CartService:CartService , private _ToastrService:ToastrService){};
 
-  wishListData:any[]=[];
+  wishListData:any=null;
+
   ngOnInit(): void {
     this._ApiDataService.getWishListData().subscribe({
       next:(response)=>{
         this.wishListData = response.data
-        console.log(response.data)
+        console.log(this.wishListData)
       }
     })
   }
